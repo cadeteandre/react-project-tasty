@@ -1,15 +1,20 @@
+import { ICategory } from "../../interfaces/IAllCategories";
 import "./CategoryCard.css";
 
-const CategoryCard = () => {
-    return ( 
-        <section className="category-card__wrapper">
-        <h1>Category Card</h1>
-        <article className="category-card">
-            <p>category{}</p>
-            <img src="" alt="meal img" />
-        </article>
-        </section>
-    );
+interface Props {
+  singleCategory?: ICategory;
+  textForRandom?: string;
 }
+const CategoryCard: React.FC<Props> = ({ singleCategory, textForRandom }) => {
+  return (
+    <article className="category-card">
+      <p>{singleCategory ? singleCategory.strCategory : textForRandom}</p>
+      <img
+        src={singleCategory?.strCategoryThumb}
+        alt={singleCategory?.strCategory}
+      />
+    </article>
+  );
+};
 
 export default CategoryCard;

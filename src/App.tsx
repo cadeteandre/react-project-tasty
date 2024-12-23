@@ -15,17 +15,17 @@ function App() {
     createRoutesFromElements(
       <Route path='/' element={<RootLayout setRecipeMeal={setRecipeMeal} />}>
         <Route index element={<Home />} />
-        <Route path='/categories' element={<FilteredByCat />} />
+        <Route path="/categories/:categoryName" element={<FilteredByCat />} />
         <Route path='/recipe/:mealID' element={<RecipePage recipeMeal={recipeMeal} />} />
       </Route>
     )
-  )
+  );
 
   return (
     <>
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
