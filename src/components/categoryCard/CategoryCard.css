@@ -1,18 +1,18 @@
-.category-card__wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2vw;
+.category-card__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw;
 }
 
-.category-card{
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: #96C0B7 ;
-    padding: 4%;
-    
+.category-card {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #96c0b7;
+  padding: 4%;
 }
-.category-card__wrapper .category-card p{
-    color: #FFFFFF;
+.category-card__wrapper .category-card p {
+  color: #ffffff;
+  font-size: 2rem;
 }
 
 /* #96C0B7 light teal
