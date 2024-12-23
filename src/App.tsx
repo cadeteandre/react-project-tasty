@@ -12,7 +12,7 @@ function App() {
       <Route path='/' element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route path='/categories' element={<FilteredByCat />} />
-        <Route path='/recipe' element={<RecipePage />} />
+        <Route path='/recipe/:mealID' element={<RecipePage />} />
       </Route>
     )
   )

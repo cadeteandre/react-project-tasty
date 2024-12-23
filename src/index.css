@@ -29,3 +29,7 @@ h1 {
   color: #96c0b7;
   font-size: 3.4rem;
 }
+
+ul {
+  list-style: none;
+}
