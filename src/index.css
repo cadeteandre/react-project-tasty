@@ -8,6 +8,10 @@
   font-family: "Poppins-reg";
   src: url("./public/fonts/Poppins-Regular.ttf");
 }
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('./public/fonts/Poppins-Light.ttf');
+}
 
 html {
   font-family: "Poppins-reg";
@@ -15,9 +19,10 @@ html {
 }
 
 body {
-  /* background-color: #D4DFC7; */
-  max-width: 1440px;
-  margin: 0 auto;
+    /* background-color: #D4DFC7; */
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
 }
 
 h1 {
