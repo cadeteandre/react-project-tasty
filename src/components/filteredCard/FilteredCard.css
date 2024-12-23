@@ -1,0 +1,14 @@
+.filtered-card__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vw;
+}
+
+.filtered-card{
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #96C0B7 ;
+        padding: 4%;
+        color: #FFFFFF;
+    
+}

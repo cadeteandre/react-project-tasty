@@ -1,0 +1,20 @@
+.category-card__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vw;
+}
+
+.category-card{
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #96C0B7 ;
+    padding: 4%;
+    
+}
+.category-card__wrapper .category-card p{
+    color: #FFFFFF;
+}
+
+/* #96C0B7 light teal
+
+#D4DFC7 pistachio*/
