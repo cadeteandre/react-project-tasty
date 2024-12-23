@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Poppins-reg';
+    src: url('./public/fonts/Poppins-Regular.ttf');
+}
+
+html {
+    font-family: 'Poppins-reg';
+    font-size: 62.5%;
+}
+
+body {
+    /* background-color: #D4DFC7; */
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #96C0B7;
+    font-size: 3.4rem;
+}
