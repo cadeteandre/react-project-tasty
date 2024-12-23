@@ -1,8 +1,11 @@
 import "./Footer.css";
+import footerIcons from "../../../public/images/footer-icons.png";
 
 const Footer = () => {
     return (  
-        <footer>Footer</footer>
+        <footer>
+            <img src={footerIcons} alt="social-media-icons" />
+        </footer>
     );
 }
 
