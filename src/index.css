@@ -1,12 +1,12 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: 'Poppins-reg';
-    src: url('./public/fonts/Poppins-Regular.ttf');
+  font-family: "Poppins-reg";
+  src: url("./public/fonts/Poppins-Regular.ttf");
 }
 @font-face {
     font-family: 'Poppins-light';
@@ -14,8 +14,8 @@
 }
 
 html {
-    font-family: 'Poppins-reg';
-    font-size: 62.5%;
+  font-family: "Poppins-reg";
+  font-size: 62.5%;
 }
 
 body {
@@ -26,6 +26,6 @@ body {
 }
 
 h1 {
-    color: #96C0B7;
-    font-size: 3.4rem;
+  color: #96c0b7;
+  font-size: 3.4rem;
 }

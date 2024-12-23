@@ -1,0 +1,27 @@
+.stn-recipe {
+  background-color: #96c0b7;
+  color: #fff;
+  border-radius: 20px;
+  width: 65vw;
+}
+.stn-recipe h1 {
+  color: #fff;
+}
+.img-box {
+  padding: 5rem 4rem;
+}
+.img-box img {
+  width: 100%;
+}
+.text-recipe p {
+  font-size: 2rem;
+}
+.stn-recipe main {
+  display: flex;
+
+  padding: 0 4rem 9rem 4rem;
+}
+.text-ingredients p {
+  font-size: 2rem;
+  font-weight: 700;
+}

@@ -1,9 +1,12 @@
+import MealDetailsSection from "../../components/mealDetailsSection/MealDetailsSection";
 import "./RecipePage.css";
 
 const RecipePage = () => {
-    return (  
-        <h1>Recipe Page</h1>
-    );
-}
+  return (
+    <section className="recipePage">
+      <MealDetailsSection />
+    </section>
+  );
+};
 
 export default RecipePage;
