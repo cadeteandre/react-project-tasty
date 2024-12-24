@@ -1,12 +1,17 @@
+import { IFilteredMeal } from "../../interfaces/IFilteredCat";
+import { IMeal } from "../../interfaces/IMeals";
 import "./FilteredCard.css";
 
-const FilteredCard = () => {
+interface IFilteredProps {
+    filteredMeals: IFilteredMeal
+}
+
+const FilteredCard:React.FC<IFilteredProps> = ({filteredMeals}) => {
     return (  
         <section className="filtered-card__wrapper">
-        <h1>Filtered Card</h1>
         <article className="filtered-card">
-           <p>mealname{}</p> 
-           <img src="" alt="Meal Title" />
+           <p>{filteredMeals.strMeal}</p> 
+           <img src={filteredMeals.strMealThumb} alt="Meal Title" />
         </article>
         </section>
     );

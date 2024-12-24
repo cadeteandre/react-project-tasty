@@ -1,0 +1,9 @@
+ .filtered-card__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 20px;
+    padding: 2vh 4vw;
+ }
+ .filtered-card{
+    padding: 4% 2%;
+ }
