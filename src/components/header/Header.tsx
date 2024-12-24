@@ -14,9 +14,11 @@ const Header: React.FC<IHeaderProps> = ({ setRecipeMeal }) => {
     const [searchResult, setSearchResult] = useState<IMeal[] | null>(null);
 
     useEffect(() => {
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-        .then((response) => response.json())
-        .then((data: IMeals) => setSearchResult(data.meals))
+        if(input.length > 0) {
+            fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+            .then((response) => response.json())
+            .then((data: IMeals) => setSearchResult(data.meals))
+        }
     }, [input])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,31 +28,36 @@ const Header: React.FC<IHeaderProps> = ({ setRecipeMeal }) => {
 
     const handleClick = () => {
         setRecipeMeal(searchResult && searchResult[0]);
+        setInput('');
     }
 
     return (  
         <header>
-            <img src={logoImg} alt="logo-img" />
+            <Link to={'/'}>
+                <img src={logoImg} alt="logo-img" />
+            </Link>
             <div>
                 <h1>Find a recipe, an idea, an inspiration...</h1>
                 <div className="header__search">
-                    <input value={input} onChange={(e) => handleChange(e)} type="text" placeholder="Type something to search" />
-                    <Link to={`/recipe/${searchResult && searchResult[0].idMeal}`}>
+                    <div className="header__searchList">
+                        <input value={input} onChange={(e) => handleChange(e)} type="text" placeholder="Type something to search" />
+                        {input.length > 0 && (
+                            <div className="search__output">
+                                <ul>
+                                    {searchResult?.map((meal) => (
+                                        <Link className="search__output__li" key={meal.idMeal} to={`/recipe/${meal.idMeal}`}>
+                                            <li onClick={handleClick}>{meal.strMeal}</li>
+                                        </Link>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                    <Link className="header__button" to={`/recipe/${searchResult && searchResult[0].idMeal}`}>
                         <button onClick={handleClick}>Search</button>
                     </Link>
                 </div>
             </div>
-            {input.length >= 1 && (
-                <div className="header__searchList">
-                    <ul>
-                        {searchResult?.map((meal) => (
-                            <Link key={meal.idMeal} to={`/recipe/${meal.idMeal}`}>
-                                <li onClick={handleClick}>{meal.strMeal}</li>
-                            </Link>
-                        ))}
-                    </ul>
-                </div>
-            )}
         </header>
     );
 }

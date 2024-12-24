@@ -52,3 +52,30 @@ header h1 {
 .header__search button:hover {
     background-color: #75a28d;
 }
+
+.search__output {
+    max-height: 200px;
+    width: 20rem;
+    overflow: scroll;
+}
+
+.search__output ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.search__output__li {
+    text-decoration: none;
+    color: #75a28d;
+    font-size: 1.4rem;
+}
+
+.search__output__li:hover {
+    opacity: 0.7;
+}
+
+.header__button{
+    align-self: flex-start;
+}

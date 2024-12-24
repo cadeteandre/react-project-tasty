@@ -3,6 +3,7 @@
   color: #fff;
   border-radius: 20px;
   width: 65vw;
+  margin-bottom: 8rem;
 }
 .stn-recipe h1 {
   color: #fff;
@@ -19,8 +20,15 @@
 .stn-recipe main {
   display: flex;
 
-  padding: 0 4rem 9rem 4rem;
+  padding: 0 2rem 9rem 4rem;
+  gap: 2rem;
 }
+
+.text-ingredients {
+  flex: 1;
+  padding: 2rem;
+}
+
 .text-ingredients p {
   font-size: 2rem;
   font-weight: 700;
@@ -28,4 +36,24 @@
 
 .text-recipe ul {
   list-style: disc;
+}
+
+.text-recipe ul li {
+  margin-bottom: 1rem;
+}
+
+.text-ingredients ul li {
+  margin-bottom: 0.6rem;
+}
+
+.text-ingredients button {
+  padding: 0.6rem 1.6rem;
+  background-color: #fff;
+  color: #8cb8a5;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins-reg';
 }
