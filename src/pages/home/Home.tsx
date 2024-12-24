@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import CategoryCard from "../../components/categoryCard/CategoryCard";
 import "./Home.css";
 import { IAllCategories, ICategory } from "../../interfaces/IAllCategories";
 import { Link } from "react-router-dom";
 
-const Home = () => {
-  const [categoryData, setCategoryData] = useState<ICategory[]>([]);
+interface IHomeprops {
+    categoryData: ICategory[]
+    setCategoryData: React.Dispatch<React.SetStateAction<ICategory[]>> 
+}
+
+const Home:React.FC<IHomeprops>= ({categoryData, setCategoryData}) => {
+  
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")

@@ -1,19 +1,25 @@
+import { Link, useParams } from "react-router-dom";
 import { IFilteredMeal } from "../../interfaces/IFilteredCat";
-import { IMeal } from "../../interfaces/IMeals";
+
 import "./FilteredCard.css";
 
 interface IFilteredProps {
-    filteredMeals: IFilteredMeal
+    singleMeal: IFilteredMeal
 }
 
-const FilteredCard:React.FC<IFilteredProps> = ({filteredMeals}) => {
+const FilteredCard:React.FC<IFilteredProps> = ({singleMeal}) => {
+
+    /* const {mealID} = useParams()  */
+
     return (  
-        <section className="filtered-card__wrapper">
+       
+            <Link to={`recipe/${singleMeal.idMeal}`}>
         <article className="filtered-card">
-           <p>{filteredMeals.strMeal}</p> 
-           <img src={filteredMeals.strMealThumb} alt="Meal Title" />
+           <p>{singleMeal.strMeal}</p> 
+           <img src={singleMeal.strMealThumb} alt="Meal Title" />
         </article>
-        </section>
+        </Link>
+    
     );
 
 }
