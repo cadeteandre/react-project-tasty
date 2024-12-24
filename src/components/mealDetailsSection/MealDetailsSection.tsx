@@ -1,5 +1,6 @@
 import "./MealDetailsSection.css";
-import { IMeal } from "../../interfaces/IMeals";
+import { IMeal } from '../../interfaces/IMeals';
+import Loader from "../loader/Loader";
 
 interface IMealDetailsSectionProps {
   recipeMeal: IMeal | null
@@ -7,7 +8,7 @@ interface IMealDetailsSectionProps {
 
 const MealDetailsSection: React.FC<IMealDetailsSectionProps> = ({ recipeMeal }) => {
 
-  if (!recipeMeal) return <p>Loading...</p>
+  if (!recipeMeal) return <Loader />
   return (
     <section className="stn-recipe">
       <div className="img-box">
@@ -28,14 +29,20 @@ const MealDetailsSection: React.FC<IMealDetailsSectionProps> = ({ recipeMeal }) 
         <article className="text-ingredients">
           <h1>Ingredients</h1>
           <ul>
-            <li>{`${recipeMeal.strMeasure1} ${recipeMeal.strIngredient1}`}</li>
-            <li>{`${recipeMeal.strMeasure2} ${recipeMeal.strIngredient2}`}</li>
-            <li>{`${recipeMeal.strMeasure3} ${recipeMeal.strIngredient3}`}</li>
-            <li>{`${recipeMeal.strMeasure4} ${recipeMeal.strIngredient4}`}</li>
-            <li>{`${recipeMeal.strMeasure5} ${recipeMeal.strIngredient5}`}</li>
-            <li>{`${recipeMeal.strMeasure6} ${recipeMeal.strIngredient6}`}</li>
+            {Object.keys(recipeMeal)
+              .filter(key => key.startsWith('strIngredient') && recipeMeal[key as keyof IMeal])
+              .map(key => {
+                const index = key.replace('strIngredient', '');
+                const measureKey = `strMeasure${index}`;
+
+                return (
+                  <li key={key}>
+                    {`${recipeMeal[measureKey as keyof IMeal] || ''} ${recipeMeal[key as keyof IMeal]}`}
+                  </li>
+                );
+              })}
           </ul>
-          <a href="#">
+          <a href={recipeMeal.strYoutube ? recipeMeal.strYoutube : '#'}>
             <button>Watch on YouTube</button>
           </a>
         </article>
