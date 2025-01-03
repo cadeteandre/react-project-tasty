@@ -21,7 +21,7 @@ const Home:React.FC<IHomeprops>= ({categoryData, setCategoryData}) => {
 
   return (
     <>
-      <h1>Or go through our categories</h1>
+      <h2 className="section-headline">Or go through our categories</h2>
       <section className="category-card__wrapper">
         {categoryData.map((singleCategory) => (
           <Link to={`/categories/${singleCategory.strCategory}`}>
