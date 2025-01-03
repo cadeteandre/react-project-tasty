@@ -9,7 +9,7 @@
 ![screenshot](./public/images/home-screenshot.png)
 ![screenshot](./public/images/recipe-page-screenshot.png)
 
-### Or check it out on Netlify[Tasty 🍲](https://sptastyapp.netlify.app/)
+### Or check it out on Netlify: [Tasty 🍲](https://sptastyapp.netlify.app/)
 
 ## Features
 
