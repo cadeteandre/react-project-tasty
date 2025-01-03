@@ -4,10 +4,14 @@ import "./FilteredByCat.css";
 import { IFilteredCat, IFilteredMeal } from '../../interfaces/IFilteredCat';
 
 import { useParams } from "react-router-dom";
+import { IMeal } from "../../interfaces/IMeals";
 
+interface Props {
+    setMealIDData: React.Dispatch<React.SetStateAction<string>>,
+    setRecipeMeal: React.Dispatch<React.SetStateAction<IMeal | null>>
+}
 
-
-const FilteredByCat = () => {
+const FilteredByCat: React.FC<Props> = ({ setMealIDData, setRecipeMeal }) => {
 
     const [filteredCatData, setFilteredCatData] = useState<IFilteredMeal[]>([]);
     const {categoryName} = useParams() 
@@ -22,13 +26,13 @@ const FilteredByCat = () => {
     
 
     return (  
-       <>
-        <h1>Everything {categoryName}</h1>
-        <section className="filtered-card__wrapper">
-            {filteredCatData.map((singleMeal) => (
-            <FilteredCard key={singleMeal.idMeal} singleMeal={singleMeal}/>
-        ))}
-        </section>
+        <>
+            <h1>Everything {categoryName}</h1>
+            <section className="filtered-card__wrapper">
+                {filteredCatData.map((singleMeal) => (
+                <FilteredCard key={singleMeal.idMeal} singleMeal={singleMeal} setMealIDData={setMealIDData} setRecipeMeal={setRecipeMeal}/>
+            ))}
+            </section>
         </>
     );
 }
