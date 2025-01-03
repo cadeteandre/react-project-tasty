@@ -5,17 +5,27 @@
     margin-bottom: 6vh;
 }
 
+
+
+
+/* alt */
 .filtered-card{
-        
+        text-align: center;
         border-radius: 10px;
         background-color: #96C0B7 ;
-        padding: 10% 2%;
+        /* padding: 10% 2%; */
+        padding: 7% 2% 0 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        height: 300px;
         color: #FFFFFF;
+
     
 }
 .filtered-card p{
-    font-size: 1.6rem;
-    padding-left: 18px;
+    font-size: 2rem;
 }
 
 .filtered-card img{
@@ -23,3 +33,21 @@
     height: 180px;
     margin: 18px;
 }
+
+/* for checkmate pattern color change (->selectors) */
+.filtered-card__wrapper a:nth-child(4n+1) .filtered-card,
+.filtered-card__wrapper a:nth-child(4n+4) .filtered-card{
+    background-color:  #D4DFC7;
+ }
+
+ .filtered-card__wrapper a:nth-child(4n+2) .filtered-card,
+ .filtered-card__wrapper a:nth-child(4n+3) .filtered-card{
+    background-color: #96c0b7 ;
+ }
+
+ .filtered-card img { 
+    width: 180px; 
+    height: 180px;  
+    object-fit: cover;
+   /*  padding: 0 4px; */
+ }

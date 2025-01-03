@@ -2,18 +2,46 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2vw;
+  padding: 2% 6% 14% 6%;
+ 
 }
 
 .category-card {
-  border: 2px solid black;
+  text-align: center;
   border-radius: 10px;
   background-color: #96c0b7;
   padding: 4%;
+  overflow: hidden;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  height: 200px; 
+  width: 200px;
 }
+
 .category-card__wrapper .category-card p {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 2.8rem;
+  margin-bottom: 8px;
 }
+
+.category-card__wrapper a:nth-child(odd) 
+.category-card { background-color: #D4DFC7; }
+
+.category-card__wrapper a:nth-child(even) 
+.category-card { background-color: #96c0b7; }
+a {
+   text-decoration: none; 
+  }
+
+.category-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}  
 
 /* #96C0B7 light teal
 
