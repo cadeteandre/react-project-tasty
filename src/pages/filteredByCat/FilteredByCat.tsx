@@ -27,7 +27,7 @@ const FilteredByCat: React.FC<Props> = ({ setMealIDData, setRecipeMeal }) => {
 
     return (  
         <>
-            <h1>Everything {categoryName}</h1>
+            <h2 className="section-headline">Everything {categoryName}</h2>
             <section className="filtered-card__wrapper">
                 {filteredCatData.map((singleMeal) => (
                 <FilteredCard key={singleMeal.idMeal} singleMeal={singleMeal} setMealIDData={setMealIDData} setRecipeMeal={setRecipeMeal}/>
