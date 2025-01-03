@@ -5,10 +5,11 @@ import { IMeal, IMeals } from "../../interfaces/IMeals";
 import { Link } from "react-router-dom";
 
 interface IHeaderProps {
+    recipeMeal: IMeal | null,
     setRecipeMeal: React.Dispatch<React.SetStateAction<IMeal | null>>
 }
 
-const Header: React.FC<IHeaderProps> = ({ setRecipeMeal }) => {
+const Header: React.FC<IHeaderProps> = ({ recipeMeal, setRecipeMeal }) => {
 
     const [input, setInput] = useState<string>('');
     const [searchResult, setSearchResult] = useState<IMeal[] | null>(null);
@@ -23,11 +24,12 @@ const Header: React.FC<IHeaderProps> = ({ setRecipeMeal }) => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
-        setRecipeMeal(searchResult && searchResult[0]);
     }
 
     const handleClick = () => {
-        setRecipeMeal(searchResult && searchResult[0]);
+        if(input !== '') {
+            setRecipeMeal(searchResult && searchResult[0]);
+        }
         setInput('');
     }
 
@@ -45,7 +47,7 @@ const Header: React.FC<IHeaderProps> = ({ setRecipeMeal }) => {
                             <div className="search__output">
                                 <ul>
                                     {searchResult?.map((meal) => (
-                                        <Link className="search__output__li" key={meal.idMeal} to={`/recipe/${meal.idMeal}`}>
+                                        <Link className="search__output__li" key={meal.idMeal} to={recipeMeal ? `categories/${recipeMeal.strCategory}/recipe/${recipeMeal.idMeal}` : '/'}>
                                             <li onClick={handleClick}>{meal.strMeal}</li>
                                         </Link>
                                     ))}
@@ -53,7 +55,7 @@ const Header: React.FC<IHeaderProps> = ({ setRecipeMeal }) => {
                             </div>
                         )}
                     </div>
-                    <Link className="header__button" to={`/recipe/${searchResult && searchResult[0].idMeal}`}>
+                    <Link className="header__button" to={input !== '' && recipeMeal ? `categories/${recipeMeal.strCategory}/recipe/${recipeMeal.idMeal}` : '/'}>
                         <button onClick={handleClick}>Search</button>
                     </Link>
                 </div>
